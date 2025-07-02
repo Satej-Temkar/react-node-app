@@ -17,3 +17,9 @@ Client(frontend) installation (commands)
 3. Client(frontend)
    a. cd client
    b. npm run dev
+
+- Screenshots
+  1. form page
+     https://github.com/Satej-Temkar/react-node-app/blob/main/formPage.png
+  3. display page
+     https://github.com/Satej-Temkar/react-node-app/blob/main/displayPage.png
