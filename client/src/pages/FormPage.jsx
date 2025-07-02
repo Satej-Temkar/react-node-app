@@ -1,7 +1,7 @@
 import { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-const API_URL = "https://react-node-app-ser.onrender.com";
+const API_URL = "https://react-node-app-server.onrender.com";
 
 const FormPage = () => {
   const [form, setForm] = useState({ fname: "", lname: "", dob: "" });
