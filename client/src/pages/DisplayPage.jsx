@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import dayjs from "dayjs";
 import { useNavigate } from "react-router-dom";
-const API_URL = "http://localhost:5000";
+const API_URL = "https://react-node-app-server.onrender.com";
 
 const DisplayPage = () => {
   const [user, setUser] = useState(null);
