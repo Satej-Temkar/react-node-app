@@ -19,7 +19,7 @@ const DisplayPage = () => {
   const getAge = (dob) => {
     return dayjs().diff(dayjs(dob), "year");
   };
-  if (!dog || !user) return <div>Loading...</div>;
+  if (!dog || !user) return <div className="loader"></div>;
 
   return (
     <>
