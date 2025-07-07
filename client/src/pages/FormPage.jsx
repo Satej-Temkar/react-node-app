@@ -13,6 +13,20 @@ const FormPage = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    const { fname, lname, dob } = {
+      fname: form.fname.trim(),
+      lname: form.lname.trim(),
+      dob: form.dob,
+    };
+
+    if (!fname || !lname || !dob) {
+      return alert("All fields are required");
+    }
+
+    const today = new Date().toISOString().split("T")[0];
+    if (dob > today) {
+      return alert("Date of Birth cannot be in the future");
+    }
     try {
       await axios.post(`${API_URL}/api/user`, form);
       navigate("/display");
@@ -36,7 +50,7 @@ const FormPage = () => {
                 type="text"
                 onChange={handleChange}
                 placeholder="Enter First Name"
-                required
+              
               />
             </div>
             <div className="input_box">
@@ -46,16 +60,16 @@ const FormPage = () => {
                 type="text"
                 onChange={handleChange}
                 placeholder="Enter Last Name"
-                required
+              
               />
             </div>
             <div className="input_box">
               <label>Date Of Birth</label>
-              <input type="date" name="dob" onChange={handleChange} required />
+              <input type="date" name="dob" onChange={handleChange} />
             </div>
           </div>
           <div className="reg_btn">
-            <button type="submit" >Submit</button>
+            <button type="submit">Submit</button>
           </div>
         </form>
       </div>
@@ -64,3 +78,4 @@ const FormPage = () => {
 };
 
 export default FormPage;
+
